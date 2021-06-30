@@ -1,0 +1,19 @@
+.pullupflash-container {
+    background-color: #99d9ea !important;
+    position: absolute !important;
+    cursor: pointer;
+    z-index: 2147483647 !important;
+}
+
+.pullupflash-container::after {
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 35px solid #4c0000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
