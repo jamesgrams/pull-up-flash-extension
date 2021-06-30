@@ -10,4 +10,4 @@ The extension component of [https://github.com/jamesgrams/pull-up-flash](Pull Up
 4. Enable Developer mode in the top right corner.
 5. Click "Load unpacked" and select the extracted folder.
 
-![Pull Up Flash Logo](./assets/icon128.png)
+![Pull Up Flash Logo](./icon128.png)
