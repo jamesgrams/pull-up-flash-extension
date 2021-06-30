@@ -1,6 +1,6 @@
 # Pull Up Flash Extension
 
-The extension component of [https://github.com/jamesgrams/pull-up-flash](Pull Up Flash). You will need to install the main component of Pull Up Flash for this extension to work.
+The extension component of [Pull Up Flash](https://github.com/jamesgrams/pull-up-flash). You will need to install the main component of Pull Up Flash for this extension to work.
 
 ## Setup
 
