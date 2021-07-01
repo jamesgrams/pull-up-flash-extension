@@ -6,7 +6,6 @@
  * Look at the page for Flash content.
  */
 function lookAt() {
-    console.log("hello");
     document.querySelectorAll("embed:not(.pullupflash-looked-at), iframe:not(.pullupflash-looked-at), param[name='movie']:not(.pullupflash-looked-at)").forEach( function(el) {
         // find the url
         var url = el.src;
