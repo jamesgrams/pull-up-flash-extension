@@ -4,8 +4,17 @@
 
 /**
  * Look at the page for Flash content.
+ * @param {boolean} redo - True if content already looked at should be reconsidered.
  */
-function lookAt() {
+function lookAt( redo ) {
+    if( redo === true ) {
+        document.querySelectorAll(".pullupflash-container").forEach( function(el) {
+            el.parentElement.removeChild(el);
+        } );
+        document.querySelectorAll(".pullupflash-looked-at").forEach( function(el) {
+            el.classList.remove("pullupflash-looked-at");
+        } );
+    }
     document.querySelectorAll("embed:not(.pullupflash-looked-at), iframe:not(.pullupflash-looked-at), param[name='movie']:not(.pullupflash-looked-at)").forEach( function(el) {
         // find the url
         var url = el.src;
@@ -70,4 +79,5 @@ function lookAt() {
 window.addEventListener("load", function() {
     lookAt();
     new MutationObserver(lookAt).observe(document.body, { attributes: true, childList: true, subtree: true });
+    window.addEventListener( "resize", function() { lookAt(true) } );
 });
