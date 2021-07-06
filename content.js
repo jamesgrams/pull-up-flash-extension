@@ -30,6 +30,7 @@ function lookAt( redo ) {
     document.querySelectorAll(selectors.join(",")).forEach( function(el) {
         // find the url
         var url = el.src;
+        var originalEl = el;
         if( el.tagName == "PARAM" ) {
             url = el.getAttribute("value");
             el = el.parentElement;
@@ -51,7 +52,7 @@ function lookAt( redo ) {
         }
         if( !url ) return;
         if( !url.match(/\.swf(\?.+)?$/) ) return;
-        el.classList.add("pullupflash-looked-at");
+        originalEl.classList.add("pullupflash-looked-at");
 
         // create the overlay element
         var div = document.createElement("div");
