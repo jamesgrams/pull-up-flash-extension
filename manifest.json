@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "manifest_version": 2,
     "description": "Click to open flash content on web pages in Flash Player",
-    "homepage_url": "https://game103.net",
+    "homepage_url": "https://pullupflash.com",
     "browser_action": {
         "default_title": "Pull Up Flash"
     },
