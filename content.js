@@ -15,13 +15,39 @@ function lookAt( redo ) {
             el.classList.remove("pullupflash-looked-at");
         } );
     }
-    document.querySelectorAll("embed:not(.pullupflash-looked-at), iframe:not(.pullupflash-looked-at), param[name='movie']:not(.pullupflash-looked-at)").forEach( function(el) {
+    var selectors = [
+        "embed:not(.pullupflash-looked-at)",
+        "iframe:not(.pullupflash-looked-at)",
+        "param[name='movie']:not(.pullupflash-looked-at)"
+    ];
+    // some site specific selectors
+    if( window.location.hostname.match(/newgrounds.com$/) ) {
+        selectors.push("#embed_sizer:not(.pullupflash-looked-at)");
+    }
+    if( window.location.hostname.match(/primarygames.com/) ) {
+        selectors.push(".game:not(.pullupflash-looked-at)");
+    }
+    document.querySelectorAll(selectors.join(",")).forEach( function(el) {
         // find the url
         var url = el.src;
         if( el.tagName == "PARAM" ) {
             url = el.getAttribute("value");
             el = el.parentElement;
             if( el.querySelector("embed, iframe") ) return;
+        }
+        if( el.id === "embed_sizer" && window.location.hostname.match(/newgrounds.com$/) ) {
+            if( el.querySelector("#ruffle_embed") ) return; // newgrounds has ruffle working on as2 projects.
+            try {
+                url = document.body.innerHTML.match(/https:\\\/\\\/uploads.ungrounded.net[^"]+/)[0].replace(/\\/g,"");
+            }
+            catch(err) {}
+        }
+        if( el.classList.contains("game") && window.location.hostname.match(/primarygames.com/) ) {
+            try {
+                url = "https:" + document.body.innerHTML.match(/\/\/gamecdn.primarygames.com[^"]+/)[0];
+                console.log(url);
+            }
+            catch(err) {}
         }
         if( !url ) return;
         if( !url.match(/\.swf(\?.+)?$/) ) return;
