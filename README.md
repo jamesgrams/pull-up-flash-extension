@@ -10,10 +10,12 @@ The extension component of [Pull Up Flash](https://github.com/jamesgrams/pull-up
 4. Enable Developer mode in the top right corner.
 5. Click "Load unpacked" and select the extracted folder.
 
-![Pull Up Flash Logo](./icon128.png)
-
 ## Building
 
 1. Have web-ext installed (`npm install -g web-ext`)
 2. Run `web-ext build` in this directory.
 3. Publish the resulting zip file.
+
+<p align="center">
+  <img src="./icon128.png" alt="Pull Up Flash Logo" width="128"/>
+</p>
