@@ -2,6 +2,13 @@
 
 The extension component of [Pull Up Flash](https://github.com/jamesgrams/pull-up-flash). You will need to install the main component of Pull Up Flash for this extension to work.
 
+## Store Links
+
+| Browser | Link      |
+|:--------|:----------|
+| Chrome  | [Install](https://chrome.google.com/webstore/detail/pull-up-flash/fbhapfcojegildkbfcidlnknbamgibkl) |
+| Firefox  | [Install](https://addons.mozilla.org/en-US/firefox/addon/pull-up-flash/) |
+
 ## Manual Setup
 
 1. Download and extract this repo.
